@@ -1,23 +1,23 @@
 # Frontend Mentor - News homepage solution
 
-This is a solution to the [News homepage challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/news-homepage-H6SWTa1MFl). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to
+the [News homepage challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/news-homepage-H6SWTa1MFl).
+Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
 - [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
+    - [The challenge](#the-challenge)
+    - [Screenshot](#screenshot)
+    - [Links](#links)
 - [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-  - [AI Collaboration](#ai-collaboration)
+    - [Built with](#built-with)
+    - [What I learned](#what-i-learned)
+    - [Continued development](#continued-development)
+    - [Useful resources](#useful-resources)
+    - [AI Collaboration](#ai-collaboration)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -25,98 +25,116 @@ This is a solution to the [News homepage challenge on Frontend Mentor](https://w
 
 Users should be able to:
 
-- View the optimal layout for the interface depending on their device's screen size
+- View the optimal layout for the interface depending on their device's screen size (mobile, tablet, and desktop)
 - See hover and focus states for all interactive elements on the page
+- Navigate the mobile menu with proper accessibility support
+- Experience smooth animations when opening/closing the mobile navigation
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![](./screenshot.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/runny-life/news-homepage](https://github.com/runny-life/news-homepage)
+- Live Site URL: [https://runny-life.github.io/news-homepage/](https://runny-life.github.io/news-homepage/)
 
 ## My process
 
 ### Built with
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
+- Semantic HTML5 markup with proper ARIA attributes
+- CSS custom properties (variables) for maintainable theming
+- Flexbox and CSS Grid for layout
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- BEM-like naming convention for CSS classes
+- Vanilla JavaScript for enhanced interactivity
+- @font-face for custom font loading
+- Picture element for responsive images
+- CSS animations and transitions for smooth UX
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+Working on this project reinforced several important web development concepts:
 
-To see how you can add code snippets, see below:
+#### Accessibility First Development:
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+
+<button
+  class="menu-toggle"
+  type="button"
+  aria-label="Toggle navigation menu"
+  aria-expanded="false"
+  aria-controls="primary-menu"
+  data-js-menu-toggle
+>
 ```
+
+Implementing proper ARIA attributes ensures the navigation is accessible to screen reader users.
+
+#### Custom CSS Properties for Consistent Design:
+
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+:root {
+  --text-preset-1: var(--fw-extra-bold) 3.5rem/3.5rem var(--ff-base);
+  --text-preset-2: var(--fw-extra-bold) 2.5rem/2.5rem var(--ff-base);
+  /* ... */
 }
 ```
+
+Creating design tokens as CSS variables made maintaining consistent typography and spacing across the project much
+easier.
+
+#### Mobile Menu Toggle with Smooth Animation:
+
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+document.addEventListener("DOMContentLoaded", () => {
+  const buttonMenuToggle = document.querySelector("[data-js-menu-toggle]");
+
+  buttonMenuToggle.addEventListener("click", () => {
+    const isOpen = document.body.classList.toggle("is-open");
+    buttonMenuToggle.setAttribute("aria-expanded", isOpen);
+    buttonMenuToggle.querySelector("img").src = isOpen ?
+      "./assets/images/icon-menu-close.svg" :
+      "./assets/images/icon-menu.svg";
+  });
+});
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+This JavaScript handles the mobile menu toggle, updates ARIA attributes, and swaps the menu icon to provide clear visual
+feedback.
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+In future projects, I want to focus on:
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+- Advanced CSS Grid layouts - While I used grid for the hero section, I want to explore more complex grid patterns
+- Performance optimization - Implementing lazy loading strategies for off-screen images and optimizing assets
+- JAMstack approach - Converting this static page into a dynamic site using a headless CMS
+- Testing - Adding unit tests for JavaScript functionality and accessibility testing tools
+- CSS-in-JS - Exploring styled-components or other CSS-in-JS solutions for component-based architecture
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+MDN Web Docs - ARIA - Essential reference for implementing accessible web components
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+CSS Tricks - A Complete Guide to Grid - Helped me understand and implement the grid layout for the hero section
+
+Frontend Mentor Community - Valuable feedback and inspiration from other developers
+
+W3Schools - CSS @font-face Rule - Guide for implementing custom fonts with fallbacks
+
+Google Fonts - Inter - Font selection and optimization tips
 
 ### AI Collaboration
 
-Describe how you used AI tools (if any) during this project. This helps demonstrate your ability to work effectively with AI assistants.
-
-- What tools did you use (e.g., ChatGPT, Claude, GitHub Copilot)?
-- How did you use them (e.g., debugging, generating boilerplate, brainstorming solutions)?
-- What worked well? What didn't?
-
-**Note: Delete this note and the content above if you didn't use AI, or replace with your own experience.**
-
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- Website - [GitHub](https://github.com/runny-life)
+- Frontend Mentor - [@runny-life](https://www.frontendmentor.io/profile/runny-life)
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+I'd like to thank the Frontend Mentor community for providing such comprehensive challenges that help developers grow
+their skills. Special thanks to everyone who shares their solutions and provides constructive feedback.
