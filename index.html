@@ -2,14 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Discover the latest news about Web 3.0, AI technology, hydrogen cars, and top tech trends.">
-  <meta name="keywords" content="Web 3.0, AI, technology, news, hydrogen cars, gaming, laptops">
-  <meta property="og:title" content="News Homepage">
-  <meta property="og:description" content="Discover the latest news about Web 3.0, AI, and technology trends.">
-  <meta property="og:image" content="./assets/images/image-web-3-desktop.jpg">
-  <meta property="og:type" content="website">
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <meta
+    name="description"
+    content="Discover the latest news about Web 3.0, AI technology, hydrogen cars, and top tech trends."
+  >
+  <meta
+    name="keywords"
+    content="Web 3.0, AI, technology, news, hydrogen cars, gaming, laptops"
+  >
+  <meta
+    property="og:title"
+    content="News Homepage"
+  >
+  <meta
+    property="og:description"
+    content="Discover the latest news about Web 3.0, AI, and technology trends."
+  >
+  <meta
+    property="og:image"
+    content="./assets/images/image-web-3-desktop.jpg"
+  >
+  <meta
+    property="og:type"
+    content="website"
+  >
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="./assets/images/favicon-32x32.png"
+  >
   <title>News Homepage | Web 3.0 Technology Trends</title>
   <link
     rel="stylesheet"
@@ -19,7 +45,11 @@
 <body>
   <header class="header">
     <div class="header__inner container">
-      <a class="logo" href="#" aria-label="Homepage">
+      <a
+        class="logo"
+        href="#"
+        aria-label="Homepage"
+      >
         <img
           class="logo__image"
           src="./assets/images/logo.svg"
@@ -30,22 +60,48 @@
         >
       </a>
 
-      <nav class="menu" aria-label="Main navigation" id="primary-menu">
+      <nav
+        class="menu is-open"
+        id="primary-menu"
+        aria-label="Main navigation"
+        data-js-menu
+      >
         <ul class="menu__list">
           <li class="menu__item">
-            <a class="menu__link" href="/" aria-current="page">Home</a>
+            <a
+              class="menu__link"
+              href="/"
+              aria-current="page"
+            >Home
+            </a>
           </li>
           <li class="menu__item">
-            <a class="menu__link" href="/new">New</a>
+            <a
+              class="menu__link"
+              href="/new"
+            >New
+            </a>
           </li>
           <li class="menu__item">
-            <a class="menu__link" href="/popular">Popular</a>
+            <a
+              class="menu__link"
+              href="/popular"
+            >Popular
+            </a>
           </li>
           <li class="menu__item">
-            <a class="menu__link" href="/trending">Trending</a>
+            <a
+              class="menu__link"
+              href="/trending"
+            >Trending
+            </a>
           </li>
           <li class="menu__item">
-            <a class="menu__link" href="/categories">Categories</a>
+            <a
+              class="menu__link"
+              href="/categories"
+            >Categories
+            </a>
           </li>
         </ul>
       </nav>
@@ -56,6 +112,7 @@
         aria-label="Toggle navigation menu"
         aria-expanded="false"
         aria-controls="primary-menu"
+        data-js-menu-toggle
       >
         <img
           src="./assets/images/icon-menu.svg"
@@ -66,7 +123,10 @@
         >
         <span class="visually-hidden">Open menu</span>
       </button>
-      <div class="menu-overlay" data-menu-overlay></div>
+      <div
+        class="menu-overlay"
+        data-js-menu-overlay
+      ></div>
     </div>
   </header>
 
@@ -97,10 +157,16 @@
         </header>
 
         <div class="hero__body">
-          <h1 class="hero__title" id="hero-heading">
+          <h1
+            class="hero__title"
+            id="hero-heading"
+          >
             The Bright Future of Web 3.0?
           </h1>
-          <p class="hero__description" id="hero-description">
+          <p
+            class="hero__description"
+            id="hero-description"
+          >
             We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. But is it really fulfilling its promise?
           </p>
           <a
@@ -113,13 +179,23 @@
         </div>
       </section>
 
-      <aside class="new" aria-labelledby="new-heading">
-        <h2 class="new__title" id="new-heading">New</h2>
+      <aside
+        class="new"
+        aria-labelledby="new-heading"
+      >
+        <h2
+          class="new__title"
+          id="new-heading"
+        >New
+        </h2>
         <ul class="new__list">
           <li class="new__item">
             <article class="new-card">
               <h3 class="new-card__title">
-                <a class="new-card__link" href="/article/hydrogen-vs-electric">
+                <a
+                  class="new-card__link"
+                  href="/article/hydrogen-vs-electric"
+                >
                   Hydrogen VS Electric Cars
                 </a>
               </h3>
@@ -129,7 +205,10 @@
           <li class="new__item">
             <article class="new-card">
               <h3 class="new-card__title">
-                <a class="new-card__link" href="/article/ai-artistry-downsides">
+                <a
+                  class="new-card__link"
+                  href="/article/ai-artistry-downsides"
+                >
                   The Downsides of AI Artistry
                 </a>
               </h3>
@@ -139,7 +218,10 @@
           <li class="new__item">
             <article class="new-card">
               <h3 class="new-card__title">
-                <a class="new-card__link" href="/article/vc-funding-drying">
+                <a
+                  class="new-card__link"
+                  href="/article/vc-funding-drying"
+                >
                   Is VC Funding Drying Up?
                 </a>
               </h3>
@@ -166,9 +248,15 @@
           >
         </header>
         <div class="footer-card__body">
-          <span class="footer-card__tag" aria-hidden="true">01</span>
+          <span
+            class="footer-card__tag"
+            aria-hidden="true"
+          >01</span>
           <h3 class="footer-card__title">
-            <a class="footer-card__link" href="/article/reviving-retro-pcs">
+            <a
+              class="footer-card__link"
+              href="/article/reviving-retro-pcs"
+            >
               Reviving Retro PCs
             </a>
           </h3>
@@ -189,9 +277,15 @@
           >
         </header>
         <div class="footer-card__body">
-          <span class="footer-card__tag" aria-hidden="true">02</span>
+          <span
+            class="footer-card__tag"
+            aria-hidden="true"
+          >02</span>
           <h3 class="footer-card__title">
-            <a class="footer-card__link" href="/article/top-laptops-2024">
+            <a
+              class="footer-card__link"
+              href="/article/top-laptops-2024"
+            >
               Top 10 Laptops of 2024
             </a>
           </h3>
@@ -212,9 +306,15 @@
           >
         </header>
         <div class="footer-card__body">
-          <span class="footer-card__tag" aria-hidden="true">03</span>
+          <span
+            class="footer-card__tag"
+            aria-hidden="true"
+          >03</span>
           <h3 class="footer-card__title">
-            <a class="footer-card__link" href="/article/gaming-growth">
+            <a
+              class="footer-card__link"
+              href="/article/gaming-growth"
+            >
               The Growth of Gaming
             </a>
           </h3>
@@ -223,5 +323,6 @@
       </article>
     </div>
   </footer>
+  <script src="./scripts/app.js" defer></script>
 </body>
 </html>

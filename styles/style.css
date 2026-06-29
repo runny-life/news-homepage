@@ -288,6 +288,72 @@ ul {
   outline-offset: 4px;
 }
 
+/*STATE*/
+
+body.is-open {
+  overflow: hidden;
+}
+
+.is-open .menu {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  min-width: 13.125rem;
+  height: 100vh;
+  padding-top: calc(1.688rem + var(--space-1100));
+  padding-inline: 1.313rem;
+  font: var(--text-preset-5);
+  font-weight: var(--fw-regular);
+  color: var(--navy-950);
+  background-color: var(--white);
+  animation: slideIn 0.4s;
+  z-index: 200;
+}
+
+.is-open .menu__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--space-300);
+}
+
+.is-open .menu-toggle {
+  position: fixed;
+  top: 1.688rem;
+  right: 1.5rem;
+  width: 1.875rem;
+  z-index: 400;
+  animation: fadeIn 0.4s;
+}
+
+.is-open .menu-overlay {
+  display: block;
+  position: fixed;
+  inset: 0;
+  background-color: var(--navy-950);
+  opacity: 0.5;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 @media (hover: hover) {
   .menu__link:hover {
     color: var(--red-500);
@@ -308,6 +374,18 @@ ul {
 
   .footer-card__link:hover {
     color: var(--red-500);
+  }
+}
+
+@media (min-width: 768px) {
+  .is-open .menu {
+    min-width: 19.5rem;
+    padding-left: 2.25rem;
+    padding-right: 5rem;
+  }
+
+  .is-open .menu-toggle {
+    right: 5rem;
   }
 }
 
